@@ -102,9 +102,17 @@ first character) and negative end position should result in an empty
 string.
 -}
 subString :: Int -> Int -> String -> String
+<<<<<<< Updated upstream
 subString start end str = take length cropedString 
   where
     length = (end - start) + 1
+=======
+subString start end str = take diff cropedString 
+  where
+    diff = endPosition - startPosition
+    startPosition = if (start >= 0) then start else 0
+    endPosition = if (end >= 0) then end+1 else 0
+>>>>>>> Stashed changes
     cropedString = drop start str
 
 {- | Write a function that takes a String — space separated numbers,
@@ -136,7 +144,11 @@ and lower than 6 elements (4, 5, 6, 7, 8 and 9).
 🕯 HINT: Use recursion to implement this function.
 -}
 lowerAndGreater :: Integer -> [Integer] -> String
+<<<<<<< Updated upstream
 lowerAndGreater n list = show n ++ " is greater than " ++ show lesserCount ++ " and lower than " ++ show biggerCount ++ " elements"
+=======
+lowerAndGreater n list = show n ++ " is greater than " ++ show lesserCount ++ " elements and lower than " ++ show biggerCount ++ " elements"
+>>>>>>> Stashed changes
   where
     lesserCount = length lesserNumbers
     biggerCount = length biggerNumbers
